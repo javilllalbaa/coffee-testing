@@ -1,5 +1,9 @@
 #!/bin/bash
 set -euo pipefail
+
+# Crear la red si no existe
+docker network inspect dkrnet >/dev/null 2>&1 || docker network create dkrnet
+
 cd ${0%/*}/coffee-shop
 
 docker stop coffee-shop coffee-shop-db barista &> /dev/null || true
