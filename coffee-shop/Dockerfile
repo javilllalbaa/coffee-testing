@@ -1,6 +1,7 @@
 #FROM adoptopenjdk/openjdk16-openj9:x86_64-alpine-jre-16.0.1_9_openj9-0.26.0
 #FROM docker.io/adoptopenjdk/openjdk16-openj9:alpine-jre-16.0.1_9_openj9-0.26.0
-FROM docker.io/adoptopenjdk/openjdk16-openj9:alpine-jre
+#FROM docker.io/adoptopenjdk/openjdk16-openj9:alpine-jre
+FROM docker.io/eclipse-temurin:16-jre-alpine
 RUN apk add curl
 
 COPY target/quarkus-app/lib/ /deployments/lib/
